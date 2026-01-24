@@ -1,0 +1,30 @@
+#备份工具
+services:
+  duplicati:
+    image: lscr.io/linuxserver/duplicati:latest
+    container_name: duplicati
+    environment:
+      - PUID=0
+      - PGID=0
+      - TZ=Asia/Shanghai
+       # 设置数据库的加密密钥
+      - SETTINGS_ENCRYPTION_KEY=
+      # WebUI 访问密码
+      - DUPLICATI__WEBSERVICE_PASSWORD=
+    volumes:
+      - /etc/docker/duplicati/config:/config
+      - /media/Cloud/alist:/backups
+      - /:/source
+    ports:
+      - 18200:8200 # 冒号左侧可改
+    restart: unless-stopped
+    #日志内容
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: 3
+    network_mode: bridge
+networks: {}
+#docker恢复密钥
+zK-&*669oT5B2^hS
