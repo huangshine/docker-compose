@@ -10,7 +10,7 @@ services:
        # 设置数据库的加密密钥
       - SETTINGS_ENCRYPTION_KEY=
       # WebUI 访问密码
-      - DUPLICATI__WEBSERVICE_PASSWORD=
+      - DUPLICATI__WEBSERVICE_PASSWORD=zK-&*669oT5B2^hS
     volumes:
       - /etc/docker/duplicati/config:/config
       - /media/Cloud/alist:/backups
@@ -26,5 +26,4 @@ services:
         max-file: 3
     network_mode: bridge
 networks: {}
-#docker恢复密钥
-zK-&*669oT5B2^hS
+
